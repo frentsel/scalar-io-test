@@ -1,0 +1,11 @@
+<h1>Products Page</h1>
+<div class="artist-list">
+  <div *ngFor="let artist of artists$ | async" class="artist">
+    <div class="img">
+      <img src="{{artist.image[4]['#text']}}" alt="{{artist.name}}">
+    </div>
+    <div class="name">
+      {{artist.name}}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+.artist-list {
+  display: grid;
+  margin-bottom: 15px;
+  grid-gap: 1px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.artist {
+  position: relative;
+
+  img {
+    width: 100%;
+  }
+}
+
+.name {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  background: #00000099;
+  padding: 10px;
+  width: 100%;
+  font-size: 12px;
+  color: white;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
