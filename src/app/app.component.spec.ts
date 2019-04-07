@@ -1,15 +1,25 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './library/header/header.component';
+import { SidebarComponent } from './library/sidebar/sidebar.component';
+import { FooterComponent } from './library/footer/footer.component';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        HttpClientModule,
+        CollapseModule.forRoot(),
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        HeaderComponent,
+        SidebarComponent,
+        FooterComponent
       ],
     }).compileComponents();
   }));
@@ -18,18 +28,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'scalar-io-test'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('scalar-io-test');
-  });
-
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to scalar-io-test!');
   });
 });
